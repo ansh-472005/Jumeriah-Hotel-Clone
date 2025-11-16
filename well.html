@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhance Your Well-being at Jumeriah Burj Al Arab | Jumeriah</title>
+    <link rel="shortcut icon" href="./images/logo (2).png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ece4d7;
+            /* Beige background */
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Navbar styling */
+        .navbar-custom {
+            background-color: #c5ad87;
+            border-bottom: 1px solid #c7c0b2;
+            padding: 0.7rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar-custom.scrolled {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-icons i {
+            font-size: 1.4rem;
+            color: #1e1e1e;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .navbar-icons i:hover {
+            color: #000;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .navbar-brand img {
+            height: 78px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .navbar-right .nav-link {
+            color: #1e1e1e;
+            font-size: 0.95rem;
+            padding: 0;
+            transition: color 0.3s;
+        }
+
+        .navbar-right .nav-link:hover {
+            color: #000;
+        }
+
+        .reserve-btn {
+            background-color: #1e1e1e;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            padding: 7px 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .reserve-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Offcanvas menu */
+        .offcanvas-custom {
+            background-color: #ece4d7;
+            width: 270px;
+        }
+
+        .offcanvas-custom .nav-link {
+            color: #1e1e1e;
+            font-size: 1rem;
+            padding: 0.6rem 0;
+            transition: 0.3s;
+        }
+
+        .offcanvas-custom .nav-link:hover {
+            color: #000;
+        }
+
+        /* ===== Video Nav Styling ===== */
+
+
+        /* ===== Fix Wrapper to Prevent X-Scroll ===== */
+        .videob-nav-wrapper {
+            overflow-x: hidden;
+            /* removes unwanted horizontal scroll */
+            margin-top: 0px;
+            /* add space from top */
+        }
+
+        /* ===== Video Nav Styling ===== */
+        .videob-nav {
+            background-color: #f3ede1;
+            /* Soft beige tone */
+            border-top: 1px solid #d1c7b9;
+            border-bottom: 1px solid #d1c7b9;
+            position: sticky;
+            top: 60px;
+            /* Adjust according to your navbar height */
+            z-index: 998;
+            margin: 0;
+            /* removes side spacing from Bootstrap row */
+            padding: 0 10px;
+        }
+
+        .videob-nav .nav {
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .videob-nav .nav-link {
+            color: #3c3c3c;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover underline animation */
+        .videob-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 4px;
+            width: 0%;
+            height: 2px;
+            background-color: #1e1e1e;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .videob-nav .nav-link:hover::after {
+            width: 70%;
+        }
+
+        .videob-nav .nav-link:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Active link */
+        .videob-nav .nav-link.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .videob-nav .nav-link.active::after {
+            width: 70%;
+        }
+
+        /* Responsive fix */
+        @media (max-width: 768px) {
+            .videob-nav {
+                top: 56px;
+            }
+
+            .videob-nav .nav {
+                font-size: 0.9rem;
+                gap: 0.4rem;
+            }
+        }
+
+        /*image section*/
+        body {
+            overflow-x: hidden;
+        }
+
+
+       
+
+        .img-fluid {
+            height: 80%;
+            background-size: cover;
+
+        }
+
+        /* Base button style */
+        .btn-more-details {
+            background-color: #1e1e1e;
+            /* dark elegant tone */
+            color: #fff;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 50px;
+            /* smooth pill shape */
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-left: 50px;
+        }
+
+        /* Hover background effect */
+        .btn-more-details::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, #ffea75, #00bcd4);
+            transition: all 0.4s ease;
+            z-index: 0;
+            color: black;
+        }
+
+        .btn-more-details:hover::before {
+            left: 0;
+        }
+
+        /* Text + icon layering */
+        .btn-more-details span,
+        .btn-more-details {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hover effects */
+        .btn-more-details:hover {
+            color: #fff;
+            transform: translateY(-3px);
+            /* subtle lift */
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Arrow animation */
+        .btn-more-details .arrow {
+            display: inline-block;
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-more-details:hover .arrow {
+            transform: translateX(6px);
+        }
+
+        footer a {
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #bfa14a !important;
+            /* gold accent */
+        }
+
+        footer i {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        footer a:hover i {
+            transform: scale(1.2);
+            color: #bfa14a !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center navbar-icons gap-3">
+                <i class="bi bi-list" data-bs-toggle="offcanvas" data-bs-target="#leftMenu"></i>
+                <i class="bi bi-search"></i>
+            </div>
+
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo (2).png" alt="Logo">
+            </a>
+
+            <div class="navbar-right">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">
+                        English
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                    </ul>
+                </div>
+
+                <a class="nav-link d-flex align-items-center" href="#">
+                    <i class="bi bi-person me-1"></i> Login
+                </a>
+
+                <a class="nav-link" href="#">My reservation</a>
+
+                <button class="btn reserve-btn">RESERVE</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Left Menu -->
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="leftMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Rooms</a>
+            <a class="nav-link" href="#">Dining</a>
+            <a class="nav-link" href="#">Spa</a>
+            <a class="nav-link" href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- bottom navbar  -->
+    <div class="videob-nav-wrapper">
+        <div class="row videob-nav" data-aos="fade-up">
+            <ul class="nav justify-content-center my-auto py-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        Jumeirah Burj Al Arab &nbsp; |
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Accommodation</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Dining</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Well-being</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Exclusive offers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Festive</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Gifts</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 mx-1 mt-5 text-center">
+            <h1 class="mt-5">
+                A life well led
+            </h1>
+            <p>
+                Discover how the facilities at Jumeirah Burj Al Arab have evolved through a deep understanding of mind
+                and body.
+            </p>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+    <!-- section 1 -->
+    <div class="row">
+        <div class="col-sm-4 mt-5" style="padding-top: 100px;">
+            <h1 class="ps-5">
+                Talise Spa
+            </h1>
+            <hr style="width: 100px; height: 2px; background-color: black; margin-left: 50px;">
+            <p class="ps-5">
+                Take an unforgettable journey into the self. Explore ancient and traditional relaxation techniques with
+                the best beauty products in the world.
+            </p>
+            <ul class="ps-5" style="margin-left: 25px;">
+                <li>Infinity pools</li>
+                <li>Signature rituals</li>
+                <li>Exclusive range of premium products</li>
+
+            </ul>
+            <button class="btn btn-more-details">
+                More Details
+                <span class="arrow">→</span>
+            </button>
+        </div>
+        <div class="col-sm-8 mx-auto my-auto mt-5">
+            <img src="./images/section1.webp" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <!-- section 2 -->
+    <div class="row">
+        <div class="col-sm-8 mx-auto my-auto mt-5">
+            <img src="./images/card7.webp" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-4 mt-5" style="padding-top: 100px;">
+            <h1 class="ps-5">
+                Talise Spa
+            </h1>
+            <hr style="width: 100px; height: 2px; background-color: black; margin-left: 50px;">
+            <p class="ps-5">
+                Take an unforgettable journey into the self. Explore ancient and traditional relaxation techniques with
+                the best beauty products in the world.
+            </p>
+            <ul class="ps-5" style="margin-left: 25px;">
+                <li>Infinity pools</li>
+                <li>Signature rituals</li>
+                <li>Exclusive range of premium products</li>
+
+            </ul>
+            <button class="btn btn-more-details">
+                More Details
+                <span class="arrow">→</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- section 3 -->
+    <div class="row">
+        <div class="col-sm-4 mt-5" style="padding-top: 100px;">
+            <h1 class="ps-5">
+                Talise Spa
+            </h1>
+            <hr style="width: 100px; height: 2px; background-color: black; margin-left: 50px;">
+            <p class="ps-5">
+                Take an unforgettable journey into the self. Explore ancient and traditional relaxation techniques with
+                the best beauty products in the world.
+            </p>
+            <ul class="ps-5" style="margin-left: 25px;">
+                <li>Infinity pools</li>
+                <li>Signature rituals</li>
+                <li>Exclusive range of premium products</li>
+
+            </ul>
+            <button class="btn btn-more-details">
+                More Details
+                <span class="arrow">→</span>
+            </button>
+        </div>
+        <div class="col-sm-8 mx-auto my-auto mt-5">
+            <img src="./images/card9.webp" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <!-- section 4 -->
+    <div class="row">
+        <div class="col-sm-8 mx-auto my-auto mt-5">
+            <img src="./images/card12.webp" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-4 mt-5" style="padding-top: 100px;">
+            <h1 class="ps-5">
+                Talise Spa
+            </h1>
+            <hr style="width: 100px; height: 2px; background-color: black; margin-left: 50px;">
+            <p class="ps-5">
+                Take an unforgettable journey into the self. Explore ancient and traditional relaxation techniques with
+                the best beauty products in the world.
+            </p>
+            <ul class="ps-5" style="margin-left: 25px;">
+                <li>Infinity pools</li>
+                <li>Signature rituals</li>
+                <li>Exclusive range of premium products</li>
+
+            </ul>
+            <button class="btn btn-more-details">
+                More Details
+                <span class="arrow">→</span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    <footer class="text-center text-lg-start text-dark mt-5" style="background-color:#ece4d7;">
+        <!-- Social Media -->
+        <section class="d-flex justify-content-between p-4 border-bottom border-secondary"
+            style="border-color:#c7c0b2;">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-google"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="py-5">
+            <div class="container text-center text-md-start">
+                <div class="row mt-3">
+                    <!-- Column 1 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Jumeirah Burj Al Arab</h6>
+                        <p style="color:#2e2e2e;">Redefining luxury in Dubai’s skyline, offering exceptional
+                            hospitality and experiences beyond imagination.</p>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Quick Links</h6>
+                        <p><a href="#" class="text-dark text-decoration-none">Overview</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Gallery</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Dining</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Well-being</a></p>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Support</h6>
+                        <p><a href="#" class="text-dark text-decoration-none">FAQs</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Policies</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Contact</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Reservations</a></p>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Contact</h6>
+                        <p><i class="fas fa-home me-2" style="color:#bfa14a;"></i> Jumeirah Street, Dubai, UAE</p>
+                        <p><i class="fas fa-envelope me-2" style="color:#bfa14a;"></i> info@jumeirah.com</p>
+                        <p><i class="fas fa-phone me-2" style="color:#bfa14a;"></i> +971 4 301 7777</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color:#e3dac9; color:#1e1e1e;">
+            © 2025 <strong style="color:#bfa14a;">Made by mainly_._ansh</strong>. All rights reserved.
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

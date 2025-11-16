@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burj Al Arab | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #ece4d7;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            background-color: #c5ad87;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px black;
+        }
+
+        .form-control {
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: white;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: gold;
+        }
+
+        .btn-login {
+            background-color: gold;
+            color: maroon;
+            font-weight: 600;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background-color: white;
+            color: maroon;
+            letter-spacing: 1px;
+        }
+
+        .text-gold {
+            color: gold;
+        }
+
+        a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar styling */
+        .navbar-custom {
+            background-color: #c5ad87;
+            border-bottom: 1px solid #c7c0b2;
+            padding: 0.7rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar-custom.scrolled {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-icons i {
+            font-size: 1.4rem;
+            color: #1e1e1e;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .navbar-icons i:hover {
+            color: #000;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .navbar-brand img {
+            height: 78px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+
+        .navbar-right .nav-link {
+            color: #1e1e1e;
+            font-size: 0.95rem;
+            padding: 0;
+            transition: color 0.3s;
+        }
+
+        .navbar-right .nav-link:hover {
+            color: #000;
+        }
+
+        .reserve-btn {
+            background-color: #1e1e1e;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            padding: 7px 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .reserve-btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Offcanvas menu */
+        .offcanvas-custom {
+            background-color: #ece4d7;
+            width: 270px;
+        }
+
+        .offcanvas-custom .nav-link {
+            color: #1e1e1e;
+            font-size: 1rem;
+            padding: 0.6rem 0;
+            transition: 0.3s;
+        }
+
+        .offcanvas-custom .nav-link:hover {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="navbar">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center navbar-icons gap-3">
+                <i class="bi bi-list" data-bs-toggle="offcanvas" data-bs-target="#leftMenu"></i>
+                <i class="bi bi-search"></i>
+            </div>
+
+            <a class="navbar-brand" href="#">
+                <img src="./images/logo (2).png" alt="Logo">
+            </a>
+
+            <div class="navbar-right">
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="langDropdown" data-bs-toggle="dropdown">
+                        English
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                        <li><a class="dropdown-item" href="#">Spanish</a></li>
+                    </ul>
+                </div>
+
+                <a class="nav-link d-flex align-items-center" href="#">
+                    <i class="bi bi-person me-1"></i> Login
+                </a>
+
+                <a class="nav-link" href="#">My reservation</a>
+
+                <button class="btn reserve-btn">RESERVE</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Offcanvas Left Menu -->
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="leftMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Rooms</a>
+            <a class="nav-link" href="#">Dining</a>
+            <a class="nav-link" href="#">Spa</a>
+            <a class="nav-link" href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card text-center">
+            <h2 class="mb-4 text-gold">Jumeirah Burj Al Arab</h2>
+            <h5 class="mb-4">Member Login</h5>
+
+            <form>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn btn-login w-100 mt-3">Login</button>
+
+                <div class="mt-3">
+                    <a href="#">Forgot Password?</a><br>
+                    <span>Don’t have an account? <a href="#">Register</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="text-center text-lg-start text-dark mt-5" style="background-color:#ece4d7;">
+        <!-- Social Media -->
+        <section class="d-flex justify-content-between p-4 border-bottom border-secondary"
+            style="border-color:#c7c0b2;">
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <div>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-google"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="me-4 text-dark"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section class="py-5">
+            <div class="container text-center text-md-start">
+                <div class="row mt-3">
+                    <!-- Column 1 -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Jumeirah Burj Al Arab</h6>
+                        <p style="color:#2e2e2e;">Redefining luxury in Dubai’s skyline, offering exceptional
+                            hospitality and experiences beyond imagination.</p>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Quick Links</h6>
+                        <p><a href="#" class="text-dark text-decoration-none">Overview</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Gallery</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Dining</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Well-being</a></p>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Support</h6>
+                        <p><a href="#" class="text-dark text-decoration-none">FAQs</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Policies</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Contact</a></p>
+                        <p><a href="#" class="text-dark text-decoration-none">Reservations</a></p>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="fw-bold mb-4" style="color:#1e1e1e;">Contact</h6>
+                        <p><i class="fas fa-home me-2" style="color:#bfa14a;"></i> Jumeirah Street, Dubai, UAE</p>
+                        <p><i class="fas fa-envelope me-2" style="color:#bfa14a;"></i> info@jumeirah.com</p>
+                        <p><i class="fas fa-phone me-2" style="color:#bfa14a;"></i> +971 4 301 7777</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color:#e3dac9; color:#1e1e1e;">
+            © 2025 <strong style="color:#bfa14a;">Made by mainly_._ansh</strong>. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

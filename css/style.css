@@ -1,0 +1,300 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Bressay Display, Times New Roman, Times, Baskerville, Georgia, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ece4d7;
+    /* Beige background */
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+
+/* Navbar styling */
+/* Full-width Navbar */
+.navbar-custom {
+    background-color: #c5ad87;
+    border-bottom: 1px solid #c7c0b2;
+    padding: 0.7rem 1.2rem;
+    width: 100%;
+    z-index: 999;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Scrolled navbar */
+.navbar-custom.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Center Logo */
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-brand img {
+    height: 78px;
+}
+
+/* Icons */
+.navbar-icons i {
+    font-size: 1.5rem;
+    color: #1e1e1e;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navbar-icons i:hover {
+    color: #000;
+}
+
+/* Right Section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+/* Underline hover effect */
+.nav-hover {
+    position: relative;
+    font-size: 0.97rem;
+    color: #1e1e1e;
+    padding: 3px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-hover:hover {
+    color: black;
+}
+
+/* Underline animation */
+.nav-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #000;
+    transition: width 0.3s ease;
+}
+
+.nav-hover:hover::after {
+    width: 100%;
+}
+
+/* Button */
+.reserve-btn {
+    background: #1e1e1e;
+    color: white;
+    border-radius: 6px;
+    padding: 7px 20px;
+    transition: 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background: #333;
+}
+
+/* Offcanvas */
+.offcanvas-custom {
+    background: #ece4d7;
+    width: 270px;
+}
+
+.offcanvas-custom .nav-link {
+    font-size: 1rem;
+    color: #1e1e1e;
+}
+
+/* Mobile Fix */
+@media (max-width: 992px) {
+    .navbar-right {
+        display: none !important;
+    }
+}
+
+
+
+a {
+    color: rgb(0, 0, 0) !important;
+}
+
+.bg-video {
+    position: relative;
+    z-index: -999;
+    margin-top: 0px;
+    /* border-bottom: 5px solid silver; */
+}
+
+.videob-nav {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 55px;
+    z-index: 1;
+
+}
+
+.videob-nav .nav-link {
+    color: #444;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+}
+
+/* Hover underline animation */
+.videob-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #b30000;
+    /* deep maroon accent */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.videob-nav .nav-link:hover::after {
+    width: 60%;
+}
+
+.videob-nav .nav-link:hover {
+    color: #b30000;
+    transform: translateY(-2px);
+}
+
+/* Active link styling */
+.videob-nav .nav-link.active {
+    color: #b30000;
+    font-weight: 600;
+}
+
+/* Disabled links */
+.videob-nav .nav-link.disabled {
+    color: #aaa;
+    pointer-events: none;
+}
+
+/* Small screen tweak */
+@media (max-width: 768px) {
+    .videob-nav .nav-link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+
+.gbtn button {
+    float: right !important;
+    /* background-color: red; */
+    margin-right: 0px;
+    width: 250px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+}
+
+/* learn more  */
+.limg {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.limg img {
+    height: 350px !important;
+    width: 550px !important;
+}
+
+.ltext {
+    height: 400px;
+    width: 60%;
+    margin-top: 100px;
+}
+
+.dtext {
+    height: 400px;
+    width: 60%;
+    margin-top: 100px;
+    padding-left: 150px;
+}
+
+.wtext {
+    margin-top: -620px;
+    margin-left: 440px;
+    /* border: 2px solid red; */
+    max-width: 340px;
+    color: white;
+}
+
+/* body {
+    background-color: #faf9f7;
+} */
+
+.rating-section {
+    padding: 40px 0;
+}
+
+.rating-divider {
+    border-left: 1px solid #ccc;
+    height: 40px;
+    margin: 0 20px;
+}
+
+.main-rating h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.sub-rating small {
+    color: #666;
+}
+
+.rating-source h6 {
+    font-weight: 500;
+    color: #000;
+}
+
+.rating-source span {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #bfa14a !important;
+    /* gold accent */
+}
+
+footer i {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer a:hover i {
+    transform: scale(1.2);
+    color: #bfa14a !important;
+}
+
+img:hover {
+    transform: scale(1.03) !important;
+    transition: transform 1s ease-in-out !important;
+}
